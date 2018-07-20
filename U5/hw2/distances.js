@@ -39,7 +39,7 @@ function checkInput(line) {
 function prompt() {
   let readline = require("readline");
   let rl = readline.createInterface(process.stdin, process.stdout);
-  rl.setPrompt("Please specify origin point x(0-100), y(0-100)> ");
+  rl.setPrompt("Please specify origin point x, y> ");
   rl.prompt();
   rl.on("line", function(line) {
     let input = checkInput(line);

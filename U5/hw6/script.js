@@ -1,5 +1,10 @@
 function generate() {
+  const maxNumber = 50;
   let number = document.getElementById("number").value;
+  if (number > maxNumber) {
+    number = maxNumber;
+    document.getElementById("number").value = maxNumber;
+  }
   let table = document.getElementById("table");
   table.innerHTML = "";
   // create table
