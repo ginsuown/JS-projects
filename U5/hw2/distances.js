@@ -12,6 +12,7 @@ function processCoordinates(input, data) {
       Math.pow(input[0] - point[0], 2) + Math.pow(input[1] - point[1], 2)
     );
   });
+  // sort data by distance property
   data.sort((a, b) => {
     return a.distance - b.distance;
   });

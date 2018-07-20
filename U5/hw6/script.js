@@ -1,6 +1,7 @@
 function generate() {
   const maxNumber = 50;
   let number = document.getElementById("number").value;
+  // set hard bound for maximum number; safeguard against very high numbers as input
   if (number > maxNumber) {
     number = maxNumber;
     document.getElementById("number").value = maxNumber;

@@ -35,7 +35,7 @@ console.log(sqrt(256));
 function findCons(array) {
   let result = 0;
   let stack = [];
-  for (let element of array) {
+  array.forEach(element => {
     //if element is a 1
     if (element === 1) {
       stack.push(element);
@@ -48,7 +48,7 @@ function findCons(array) {
         stack.length = 0;
       }
     }
-  }
+  });
   //return
   return result > stack.length ? result : stack.length;
 }
