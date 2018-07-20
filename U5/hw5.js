@@ -68,8 +68,8 @@ console.log(findCons(arr5));
 function findLongestPrefix(array) {
   let prefix = undefined;
   //iterate through input array
-  for (let item of array) {
-    //initialize prefix with first item
+  array.forEach(item => {
+    //
     if (prefix === undefined) {
       prefix = item;
     } else {
@@ -82,8 +82,11 @@ function findLongestPrefix(array) {
       }
       //update prefix
       prefix = temp;
+      if (prefix === "") {
+        return prefix;
+      }
     }
-  }
+  });
   return prefix;
 }
 
