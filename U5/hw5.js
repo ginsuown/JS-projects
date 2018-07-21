@@ -30,6 +30,7 @@ console.log(sqrt(7));
 console.log(sqrt(8));
 console.log(sqrt(9));
 console.log(sqrt(256));
+console.log(sqrt(17));
 
 // question 2: given a binary array, find maximum number of consecutive 1's.
 function findCons(array) {

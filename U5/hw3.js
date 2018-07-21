@@ -10,7 +10,7 @@ let match1 = myString.match(/[\-0-9a-z.]/gi);
 console.log(match1);
 
 // *********************
-// ASK: looks for ...?
+// ASK: looks for characters that are not in that class. Only matches " "
 let match2 = myString.match(/[^\-0-9a-z.]/);
 console.log(match2);
 

@@ -3,9 +3,19 @@ function getFirst(x) {
   return x.shift();
 }
 
+// implemented in Array.prototype
+Array.prototype.getFirstElement = function() {
+  if (this === undefined || this === []) {
+    return undefined;
+  } else {
+    return this[0];
+  }
+};
+
 // testing
 let a = [1, 2, 3, 4];
 console.log(getFirst(a));
+console.log(a.getFirstElement());
 
 // filter false, null, 0, blank values from array
 function removeF(x) {
