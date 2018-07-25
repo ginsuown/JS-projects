@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <img src="logo.png" alt="image here" id="testing"/>
+  
+  <script type="text/javascript">
+	function test () {
+		alert('I am here!');
+		console.log("I am here!");
+	 }
+	let element = document.getElementById('testing');
+	element.addEventListener("click", test);
+	//element.onclick = test;
+  </script>
+</body>
+</html>
