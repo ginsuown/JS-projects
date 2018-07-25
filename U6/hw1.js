@@ -47,6 +47,7 @@
 
 // "Index: 4, element: undefined" 4 times
 
+//Question 6
 function stopTimer(x) {
   //starts with x seconds
   let timer = setInterval(() => {
