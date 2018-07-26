@@ -58,3 +58,22 @@ function getAllProps(obj) {
 }
 
 getAllProps(student);
+
+function Person() {
+  this.name = "hi";
+  this.age = 5;
+}
+
+function Child() {
+  this.toy = "car";
+}
+
+Child.prototype = new Person();
+
+let p1 = new Person();
+
+console.log(p1);
+let c1 = new Child();
+console.log(c1);
+
+console.log(Object.getOwnPropertyNames(c1));

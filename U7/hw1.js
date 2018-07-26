@@ -13,6 +13,7 @@ function myRequest(url) {
   return p;
 }
 
+// testing
 let req = myRequest("https://www.google.com");
 
 req.then(response => {
