@@ -6,7 +6,7 @@ const server = http.createServer((req, res) => {
   if (req.method === "POST") {
     console.log(`${req.method} request at ${req.url}`);
     //POST request
-    console.log(req.url);
+    // console.log(req.url);
     let string = req.url.match(/(?<=\=).+$/);
     if (string) {
       res.writeHead(200);
