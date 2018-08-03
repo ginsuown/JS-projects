@@ -1,0 +1,7 @@
+.Docker {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: lightgrey;
+  text-align: center;
+}
