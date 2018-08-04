@@ -1,0 +1,58 @@
+.Buttons {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.Button {
+  height: 75px;
+  margin: auto;
+  width: 100%;
+  font-size: 16pt;
+}
+
+.Start {
+  background-color: green;
+  color: white;
+}
+
+.Stop {
+  background-color: red;
+  color: white;
+}
+
+.Timer {
+  position: relative;
+  width: 400px;
+  border: 2px solid gray;
+  height: 500px;
+}
+
+.Time {
+  font-size: 80pt;
+  padding-top: 40px;
+}
+
+.loader {
+  position: absolute;
+  left: 50%;
+  margin-left: -175px;
+  top: 0px;
+  border: 26px solid #f3f3f3; /* Light grey */
+  border-top: 26px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 2s cubic-bezier(0.4, 0.6, 0.8, 0.4) infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
