@@ -1,0 +1,66 @@
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.active {
+}
+
+li {
+  font-size: 20pt;
+  cursor: pointer;
+  padding: 15px;
+}
+
+li:nth-of-type(n + 2) {
+  border-top: 1px solid gray;
+}
+
+li:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+ul {
+  border-left: 5px solid red;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+.buttons {
+  display: flex;
+  width: 400px;
+  height: 30px;
+}
+
+.selected {
+  background-color: red;
+  color: white;
+}
+
+.buttons button {
+  flex-grow: 1;
+  font-size: 16pt;
+}
+
+.inputForm input {
+  font-size: 18pt;
+}
+
+.inputForm button {
+  font-size: 18pt;
+}
+
+.overlay {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid darkslategray;
+  width: 100%;
+  background-color: whitesmoke;
+  padding-left: 15px;
+}
+
+.content {
+  position: relative;
+  top: 165px;
+}
