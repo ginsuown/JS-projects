@@ -7,6 +7,7 @@ export default class TodoList extends Component {
     this.state = { selected: 2, items: [], input: "" };
   }
 
+  //add item to list
   addItem = () => {
     if (this.state.input) {
       this.setState({
@@ -16,14 +17,17 @@ export default class TodoList extends Component {
     }
   };
 
+  //update state for controlled component
   textChange = e => {
     this.setState({ input: e.target.value });
   };
 
+  //change filter
   filterChange = i => {
     this.setState({ selected: i });
   };
 
+  //css classname for selected tab
   getClassName = i => {
     if (i === this.state.selected) {
       return "selected";
@@ -32,11 +36,13 @@ export default class TodoList extends Component {
     }
   };
 
+  //toggle item completion in this.state
   toggle = index => {
     let temp = [...this.state.items];
     temp[index].done = !temp[index].done;
     this.setState({ items: [...temp] });
   };
+
   render() {
     return (
       <div className="TodoList">
