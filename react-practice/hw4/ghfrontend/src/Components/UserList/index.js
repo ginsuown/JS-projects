@@ -17,17 +17,22 @@ export default class UserList extends React.Component {
       this.setState({ data: res.data });
     });
   }
+
   render() {
     return (
-      <div>
+      <div className="UserList">
         <ul>
-          {this.state.data.map(item => {
+          <h1>List</h1>
+          {this.state.data.map((item, index) => {
             return (
               <ListItem
-                id={this.state.data.id}
-                userName={this.state.data.login}
-                img={this.state.data.avatar_url}
-                key={this.state.data.id}
+                details={() =>
+                  this.props.loadDetails(this.state.data[index].login)
+                }
+                id={this.state.data[index].id}
+                userName={this.state.data[index].login}
+                img={this.state.data[index].avatar_url}
+                key={this.state.data[index].id}
               />
             );
           })}

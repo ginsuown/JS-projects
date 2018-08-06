@@ -1,0 +1,15 @@
+.UserDetails {
+  height: 100%;
+  position: fixed;
+  background-color: #fafaf4;
+  width: 350px;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  border-left: 2px solid gray;
+  padding-left: 10px;
+}
+
+.ClickOne {
+  color: gray;
+}

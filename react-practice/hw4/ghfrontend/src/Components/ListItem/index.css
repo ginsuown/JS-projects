@@ -1,0 +1,19 @@
+.ListItem {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid gray;
+  width: 100%;
+}
+
+.ListItem-id {
+  margin-left: 20px;
+}
+
+.ListItem-username {
+  margin-left: 15px;
+  font-size: 15pt;
+}
+.ListItem-img {
+  height: 60px;
+  float: right;
+}
