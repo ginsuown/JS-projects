@@ -1,0 +1,22 @@
+.ListItem {
+  display: flex;
+}
+
+.Counter {
+  padding: 20px;
+  background-color: whitesmoke;
+  border: 1px solid rgb(230, 230, 230);
+}
+
+.Content {
+  text-align: left;
+  padding-left: 20px;
+  border: 1px solid rgb(230, 230, 230);
+  width: 100%;
+}
+
+.Votes {
+  background-color: rgb(150, 150, 150);
+  color: white;
+  border-radius: 5px;
+}
