@@ -1,5 +1,14 @@
-var i = 1;
-console.log(i);
+var myArr = ["A", "B", "C"];
 
-var i = 3;
-console.log(i);
+myArr.duplicate = () => {
+  let temp = [];
+  for (let i = 0; i < myArr.length; i++) {
+    temp.push(myArr[i]);
+  }
+  return temp;
+};
+
+var myNewArray = myArr.duplicate();
+
+console.log(myArr); // ['A', 'B', 'C']
+console.log(myNewArray); // ['A', 'B', 'C', 'A', 'B', 'C']

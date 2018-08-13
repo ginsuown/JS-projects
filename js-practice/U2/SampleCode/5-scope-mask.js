@@ -20,7 +20,7 @@ console.log(typeof x); // logs "undefined"; x out of scope
   console.log(x1); // logs "blue"
   {
     // inner block
-    let x1 = 3;
+    var x1 = 3;
     console.log(x1); // logs 3
   }
   console.log(x1); // logs 3
