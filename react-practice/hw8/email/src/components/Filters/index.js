@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 
+//Counter component
 function Counter(props) {
   return <div className="Counter">{props.count}</div>;
 }

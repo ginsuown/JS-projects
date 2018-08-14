@@ -1,11 +1,10 @@
 .Emails {
-  position: relative;
-  left: 250px;
   background-color: whitesmoke;
   min-width: 350px;
   max-width: 400px;
-  height: 100vh;
   overflow: auto;
+  border-right: 1px solid lightgray;
+  flex-grow: 1;
 }
 
 .Emails-Email {
@@ -16,8 +15,13 @@
   cursor: default;
 }
 
+.Emails-Selected {
+  color: rgb(0, 71, 153);
+  background-color: rgb(220, 220, 220);
+}
+
 .Emails-Email:hover {
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(220, 220, 220);
 }
 
 .Emails-Subject {
@@ -38,6 +42,7 @@
   text-align: center;
   color: darkgray;
 }
+
 .Emails-Header {
   display: flex;
   justify-content: space-between;

@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import "./index.css";
 
 export default class Emails extends Component {
+  //Function to render email tile
   renderEmails = emails => {
+    //Array to map JS month integer into 3 character string
     const months = [
       "JAN",
       "FEB",
@@ -17,12 +19,18 @@ export default class Emails extends Component {
       "NOV",
       "DEC"
     ];
+
     if (emails.length > 0) {
       return emails.map((email, index) => {
         const dateParts = email.time.split(/[\s\-:]/);
         return (
           <li
-            className="Emails-Email"
+            className={
+              "Emails-Email" +
+              (this.props.selected === email.originalIndex //Set class for email if it is selected
+                ? " Emails-Selected"
+                : "")
+            }
             key={index}
             onClick={() => this.props.select(email.originalIndex)}
           >
@@ -53,12 +61,12 @@ export default class Emails extends Component {
 
   render() {
     const { emails, filter } = this.props;
-    const filteredEmails = emails
+    //Filter email by the selected filter
+    const filteredEmails = emails //Map first assigns indices to array to preserve unique key after filtering
       .map((item, index) => {
         return { ...item, originalIndex: index };
       })
       .filter(item => item.tag === filter);
-    console.log(filteredEmails);
     return <div className="Emails">{this.renderEmails(filteredEmails)}</div>;
   }
 }

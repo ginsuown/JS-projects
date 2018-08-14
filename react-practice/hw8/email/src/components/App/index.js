@@ -4,6 +4,7 @@ import Filters from "../Filters";
 import Emails from "../Emails";
 import Content from "../Content";
 import "./App.css";
+import { sampledata } from "./sampledata";
 
 class App extends Component {
   constructor(props) {
@@ -20,20 +21,33 @@ class App extends Component {
   }
 
   componentDidMount() {
+    //Get data from API, otherwise, fall back on hard-coded data
     Axios({
       method: "get",
       url: "http://api.haochuan.io/emails"
-    }).then(res => {
-      this.setState({ emails: res.data.emailData });
-    });
+    })
+      .then(res => {
+        this.setState({
+          emails: res.data.emailData
+        });
+      })
+      .catch(err => {
+        console.log(
+          "Failed to load data, falling back to hard-coded data. Error: " + err
+        );
+        this.setState({
+          emails: sampledata.emailData
+        });
+      });
   }
 
+  //Update state with which filter was selected
   setFilter = setFilter => {
-    this.setState({ filter: setFilter });
+    this.setState({ filter: setFilter, selected: null });
   };
 
+  //Update state with which email was selected
   selectEmail = index => {
-    console.log(index);
     this.setState({
       selected: index,
       emails: [
@@ -44,24 +58,67 @@ class App extends Component {
     });
   };
 
+  deleteEmail = () => {
+    const index = this.state.selected;
+    this.setState({
+      selected: null,
+      emails: [
+        ...this.state.emails.slice(0, index),
+        { ...this.state.emails[index], tag: "deleted" },
+        ...this.state.emails.slice(index + 1)
+      ]
+    });
+  };
+
   render() {
-    console.log(this.state.emails);
     return (
       <div className="App">
-        <Filters
+        <Filters //Left side bar to toggle filters
           setFilter={this.setFilter}
           currentFilter={this.state.filter}
-          inboxCount={this.state.inboxCount}
-          sentCount={this.state.sentCount}
-          draftCount={this.state.draftCount}
-          trashCount={this.state.trashCount}
+          //count number of items unread
+          inboxCount={this.state.emails.reduce((total, currentItem) => {
+            if (currentItem.read === "false") {
+              return (total += 1);
+            } else {
+              return total;
+            }
+          }, 0)}
+          //count number of items in sent
+          sentCount={this.state.emails.reduce((total, currentItem) => {
+            if (currentItem.tag === "sent") {
+              return (total += 1);
+            } else {
+              return total;
+            }
+          }, 0)}
+          //count number of items in drafts
+          draftCount={this.state.emails.reduce((total, currentItem) => {
+            if (currentItem.tag === "draft") {
+              return (total += 1);
+            } else {
+              return total;
+            }
+          }, 0)}
+          //count number of items in trash
+          trashCount={this.state.emails.reduce((total, currentItem) => {
+            if (currentItem.tag === "deleted") {
+              return (total += 1);
+            } else {
+              return total;
+            }
+          }, 0)}
         />
-        <Emails
+        <Emails //List of emails
           filter={this.state.filter}
           emails={this.state.emails}
           select={this.selectEmail}
+          selected={this.state.selected}
         />
-        <Content email={this.state.emails[this.state.selected]} />
+        <Content //Display email content
+          email={this.state.emails[this.state.selected]}
+          delete={this.deleteEmail}
+        />
       </div>
     );
   }

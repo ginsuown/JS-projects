@@ -1,7 +1,74 @@
 .Content {
-  left: 250px;
-  position: relative;
-  width: 100%;
-  height: 100vh;
   overflow: auto;
+  width: 500px;
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+
+.Content-Header {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  border-bottom: 1px solid rgb(207, 207, 207);
+  height: 110px;
+  padding: 0px 20px;
+}
+
+.Header-Top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-Bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Content-Empty {
+  position: relative;
+  top: 50%;
+  text-align: center;
+  color: darkgray;
+}
+
+.Content-Delete {
+  border: none;
+  padding: 0px;
+  height: 20pt;
+  background-color: transparent;
+  margin-top: 30px;
+  font-size: 22pt;
+  color: rgb(85, 85, 85);
+}
+
+.Content-Delete:hover {
+  color: rgb(192, 0, 0);
+  cursor: pointer;
+}
+
+.Content-From {
+  color: rgb(126, 126, 126);
+  font-size: 12pt;
+}
+
+.Content-Address {
+  background-color: rgb(228, 228, 228);
+  border-radius: 6px;
+  font-size: 12pt;
+  color: rgb(126, 126, 126);
+  height: 100%;
+  padding: 3px;
+}
+
+.Content-Address:hover {
+  background-color: rgb(206, 206, 206);
+}
+
+.Content-Time {
+  color: rgb(126, 126, 126);
+  font-size: 12pt;
+}
+
+.Content-Content {
+  padding: 15px;
 }

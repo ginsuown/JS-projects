@@ -1,9 +1,10 @@
 .Filter {
-  position: fixed;
   width: 250px;
-  height: 100%;
   background-color: rgb(21, 35, 41);
+  min-width: 170px;
+  flex-shrink: 1;
 }
+
 .Compose {
   border-bottom: 1px solid white;
 }
@@ -20,7 +21,6 @@
 
 .Compose button:hover {
   background-color: rgb(0, 86, 126);
-  cursor: pointer;
 }
 
 .Filter-Filters {
@@ -34,7 +34,7 @@
   justify-content: space-between;
   height: 70px;
   border: none;
-  font-size: 14pt;
+  font-size: 12pt;
   font-family: "Open Sans", sans-serif;
   background-color: rgb(21, 35, 41);
   color: white;
@@ -49,7 +49,7 @@
 }
 
 .compose-icon {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .filter-icon {
@@ -57,5 +57,5 @@
 }
 
 .Counter {
-  padding: 0px 10px 0px;
+  padding: 0px 20px 0px;
 }
