@@ -1,0 +1,32 @@
+.Emails {
+  position: relative;
+  left: 17%;
+  background-color: whitesmoke;
+  width: 25%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.Emails-Email {
+  list-style: none;
+  border-bottom: 1px solid lightgray;
+  padding: 1px 15px 0px;
+  margin: 0px;
+  cursor: default;
+}
+
+.Emails-Email:hover {
+  background-color: rgb(218, 218, 218);
+}
+
+.Emails-Subject {
+  font-size: 12pt;
+}
+
+.Emails-Content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  font-size: 10pt;
+  color: rgb(119, 119, 119);
+}
