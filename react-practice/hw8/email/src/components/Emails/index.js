@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import "./index.css";
 
 export default class Emails extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   renderEmails = emails => {
     const months = [
       "JAN",
@@ -21,16 +17,26 @@ export default class Emails extends Component {
       "NOV",
       "DEC"
     ];
-    if (emails !== []) {
-      return emails.map(email => {
-        const dateParts = email.time.split(/[\s\-\:]/);
+    if (emails.length > 0) {
+      return emails.map((email, index) => {
+        const dateParts = email.time.split(/[\s\-:]/);
         return (
-          <li className="Emails-Email">
-            <h3 className="Emails-Subject">{email.subject}</h3>
+          <li
+            className="Emails-Email"
+            key={index}
+            onClick={() => this.props.select(email.originalIndex)}
+          >
+            <div className="Emails-Header">
+              <h3 className="Emails-Subject">{email.subject}</h3>
+              <div
+                className={email.read === "false" ? "Unread-Circle" : null}
+              />
+            </div>
+
             <div className="Emails-Content">
               <p>{email.from}</p>
               <p>
-                {months[Number.parseInt(dateParts[1]) - 1] +
+                {months[Number.parseInt(dateParts[1], 10) - 1] +
                   " " +
                   dateParts[2] +
                   " " +
@@ -47,7 +53,11 @@ export default class Emails extends Component {
 
   render() {
     const { emails, filter } = this.props;
-    const filteredEmails = emails.filter(item => item.tag === filter);
+    const filteredEmails = emails
+      .map((item, index) => {
+        return { ...item, originalIndex: index };
+      })
+      .filter(item => item.tag === filter);
     console.log(filteredEmails);
     return <div className="Emails">{this.renderEmails(filteredEmails)}</div>;
   }
