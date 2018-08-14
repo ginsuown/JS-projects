@@ -10,7 +10,6 @@
   flex-direction: column;
   background-color: whitesmoke;
   border-bottom: 1px solid rgb(207, 207, 207);
-  height: 110px;
   padding: 0px 20px;
 }
 
@@ -48,13 +47,13 @@
 
 .Content-From {
   color: rgb(126, 126, 126);
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 .Content-Address {
   background-color: rgb(228, 228, 228);
   border-radius: 6px;
-  font-size: 12pt;
+  font-size: 10pt;
   color: rgb(126, 126, 126);
   height: 100%;
   padding: 3px;
@@ -66,7 +65,8 @@
 
 .Content-Time {
   color: rgb(126, 126, 126);
-  font-size: 12pt;
+  font-size: 10pt;
+  text-align: right;
 }
 
 .Content-Content {
