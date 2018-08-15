@@ -1,0 +1,64 @@
+.App {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  top: 50px;
+  height: 50vh;
+  border-left: 1px solid gray;
+  padding-left: 10px;
+}
+
+.Tags-Line {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Tag {
+  padding: 5px 5px 5px 13px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border-radius: 25px;
+  background-color: rgb(83, 83, 83);
+  color: white;
+  font-size: 12pt;
+  font-weight: bold;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.Input {
+  border: none;
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 12pt;
+  background-color: transparent;
+  width: 100px;
+}
+
+.Input:focus {
+  outline: none;
+}
+
+.Line-Blur {
+  border: 0px solid blue;
+  width: 0%;
+}
+
+.Line-Focus {
+  width: 100%;
+  transition: ease;
+  transition-duration: 0.2s;
+  border: 1px solid blue;
+}
+
+.X-Button {
+  font-size: 10pt;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: none;
+}
+
+.X-Button:hover {
+  color: rgb(167, 167, 167);
+}
