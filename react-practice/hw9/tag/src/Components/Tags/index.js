@@ -46,7 +46,7 @@ export default class Tags extends Component {
                   className="X-Button"
                   onClick={() => this.removeTag(index)}
                 >
-                  <i class="fa fa-times" aria-hidden="true" />
+                  <i className="fa fa-times" aria-hidden="true" />
                 </button>
               </span>
             );
