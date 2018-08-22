@@ -1,0 +1,11 @@
+.Ordinal {
+}
+
+.Error-Message {
+  color: red;
+  display: inline;
+}
+
+.No-Error {
+  display: none;
+}
